@@ -11,14 +11,14 @@ admin.initializeApp({
 const app = express();
 app.use(bodyparser.json());
 
-// const port = 3000;
 //port (as described above) and host are both wrong
 // const host = 'localhost';
 // const port = 3000;
 
 // use alternate localhost and the port Heroku assigns to $PORT
 const host = '0.0.0.0';
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
+const port = 3000;
 
 const notification_options = {
   priority: "high",
@@ -51,12 +51,10 @@ app.post("/send", (req, res) => {
 });
 app.get('/', (req, res) => {
   
-      res.status(200).send("Xin chào bạn Trung!");
+    return  res.status(200).send("Xin chào bạn Trung!");
   }
 );
-// app.listen(port, () => {
-//   console.log("listening to PORT = " + port);
-// });
+
 app.listen(port, host, function() {
   console.log("Server started..." + port);
 });

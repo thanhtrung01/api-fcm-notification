@@ -17,8 +17,7 @@ app.use(bodyparser.json());
 
 // use alternate localhost and the port Heroku assigns to $PORT
 const host = '0.0.0.0';
-// const port = process.env.PORT || 3000;
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const notification_options = {
   priority: "high",
